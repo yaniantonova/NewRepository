@@ -7,7 +7,12 @@ public class Main {
         Lecture Lecture = new Lecture();
         Lecture secondLecture = new Lecture();
         Lecture thirdLecture = new Lecture();
+<<<<<<< HEAD
         Lecture sixthLecture = new Lecture();
+=======
+        Lecture fourthLecture = new Lecture()
+        Lecture fifthLecture = new Lecture();
+>>>>>>> feature
 
         System.out.println(Lecture.counterLecture);
     }
