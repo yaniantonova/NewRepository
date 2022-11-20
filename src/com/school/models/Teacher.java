@@ -4,7 +4,9 @@ public class Teacher {
     private int id;
     public static int counterTeacher;
 
-    public Teacher() {
+    public Teacher(int id) {
+        this.id = id;
         counterTeacher++;
+
     }
 }
