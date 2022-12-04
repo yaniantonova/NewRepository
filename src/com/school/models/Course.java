@@ -4,19 +4,39 @@ public class Course<id> {
     private int id;
 
     public static int counterCourse;
-    private Student student;
-    private Teacher teacher;
-    private Lecture lecture;
+    private String student;
+    private String teacher;
+    private String lecture;
 
-    public Course(int id) {
+    public Course(int id, String student, String teacher, String lecture) {
         this.id = id;
+        this.student = student;
+        this.teacher = teacher;
+        this.lecture = lecture;
         counterCourse++;
+    }
 
+
+    public String getStudent() {
+        return student;
     }
 
     public int getId() {
         return id;
+
     }
 
+    public String getTeacher() {
+        return teacher;
+    }
 
+    public String getLecture() {
+        return lecture;
+    }
 }
+
+
+
+
+
+
