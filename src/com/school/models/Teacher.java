@@ -1,14 +1,13 @@
 package com.school.models;
 
 public class Teacher {
-    private int id;
+    private final int ID;
     private String name;
     public static int counterTeacher;
 
-    Teacher firstTeacher = new Teacher(1, "Shevchenko");
-
-    public Teacher(int id, String name) {
-        this.id = id;
+    Teacher firstTeacher = new Teacher(1,"Karol");
+    public Teacher(int ID, String name) {
+        this.ID = counterTeacher;
         this.name = name;
         counterTeacher++;
 
@@ -16,7 +15,7 @@ public class Teacher {
 
 
     public int getId() {
-        return id;
+        return ID;
     }
 
     public String getName() {

@@ -5,6 +5,7 @@ import com.school.models.Lecture;
 import com.school.models.Student;
 import com.school.models.Teacher;
 import com.school.service.CourseService;
+import com.school.service.LectureService;
 
 import java.util.Scanner;
 
@@ -84,7 +85,30 @@ public class Main {
                 System.out.println("Please, answer");
                 break;
         }
-        scanner.close();
+        Scanner alwaysWork = new Scanner(System.in); // add console app which always work, task1
+        int answer3 = 1;
+        while (answer3 > 0) {
+            System.out.println("Choose number of lecture");
+            int answer4 = alwaysWork.nextInt();
+            if (answer4 <= Lecture.counterLecture) { // add check,task3
+                System.out.println("Your lecture is " + answer4);
+            } else {
+                System.out.println("That`s all for now. Program will be closed"); // close app,task2
+                break;
+            }
+
+        }
+
+
+        int i = Lecture.counterLecture; // add new 8 lectures,after close app, task4
+        while (i < 16) {
+            LectureService.createLecture(9, 1, "theme n");
+            i++;
+            System.out.println(Lecture.counterLecture);
+
+        }
+
     }
 
 }
+

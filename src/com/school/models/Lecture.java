@@ -3,15 +3,15 @@ package com.school.models;
 import com.school.models.Course;
 
 public class Lecture {
-    private int id;
+    private final int ID;
     private String name;
     private String homework;
     private String addition;
     public static int counterLecture;
     public int idCourse;
 
-    public Lecture(int id, int idCourse, String name) {
-        this.id = id;
+    public Lecture(int ID, int idCourse, String name) {
+        this.ID = counterLecture;
         this.idCourse = idCourse;
         this.name = name;
         counterLecture++;
@@ -19,7 +19,7 @@ public class Lecture {
 
 
     public int getId() {
-        return id;
+        return ID;
     }
 
     public String getName() {
