@@ -10,23 +10,31 @@ public class Lecture {
     public static int counterLecture;
     public int idCourse;
 
-    public Lecture(int ID, int idCourse, String name) {
-        this.ID = counterLecture;
-        this.idCourse = idCourse;
-        this.name = name;
-        counterLecture++;
+    public Lecture(int ID) {
+        this.ID = ID;
     }
 
+    @Override
+    public String toString() {
+        return "Lecture {" + "id=" + ID + "}";
 
-    public int getId() {
-        return ID;
+    public Lecture( int ID, int idCourse, String name){
+            this.ID = counterLecture;
+            this.idCourse = idCourse;
+            this.name = name;
+            counterLecture++;
+        }
+
+
+        public int getId () {
+            return ID;
+        }
+
+        public String getName () {
+            return name;
+        }
+
     }
-
-    public String getName() {
-        return name;
-    }
-
-}
 
 
 

@@ -5,19 +5,28 @@ public class Student {
     private String name;
     public static int counterStudent;
 
-    Student firstStudent = new Student(1,"Melnyk");
-    public Student(int ID, String name) {
-        this.ID = counterStudent;
-        this.name = name;
-        counterStudent++;
+    Student firstStudent = new Student(1, "Melnyk");
 
+    public Student(int ID) {
+        this.ID = ID;
     }
 
-    public int getId() {
-        return ID;
-    }
+    @Override
+    public String toString() {
+        return "Student {" + "id=" + ID + "}";
 
-    public String getName() {
-        return name;
+    public Student( int ID, String name){
+            this.ID = counterStudent;
+            this.name = name;
+            counterStudent++;
+
+        }
+
+        public int getId () {
+            return ID;
+        }
+
+        public String getName () {
+            return name;
+        }
     }
-}

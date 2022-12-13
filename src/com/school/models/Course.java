@@ -8,32 +8,40 @@ public class Course {
     private String teacher;
     private String lecture;
 
-    public Course(int ID, String student, String teacher, String lecture) {
-        this.ID = counterCourse;
-        this.student = student;
-        this.teacher = teacher;
-        this.lecture = lecture;
-        counterCourse++;
+    public Course(int ID) {
+        this.ID = ID;
     }
 
+    @Override
+    public String toString() {
+        return "Course {" + "id=" + ID + "}";
 
-    public String getStudent() {
-        return student;
+    public Course( int ID, String student, String teacher, String lecture){
+            this.ID = counterCourse;
+            this.student = student;
+            this.teacher = teacher;
+            this.lecture = lecture;
+            counterCourse++;
+        }
+
+
+        public String getStudent () {
+            return student;
+        }
+
+        public int getId () {
+            return ID;
+
+        }
+
+        public String getTeacher () {
+            return teacher;
+        }
+
+        public String getLecture () {
+            return lecture;
+        }
     }
-
-    public int getId() {
-        return ID;
-
-    }
-
-    public String getTeacher() {
-        return teacher;
-    }
-
-    public String getLecture() {
-        return lecture;
-    }
-}
 
 
 
