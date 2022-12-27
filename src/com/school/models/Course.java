@@ -1,15 +1,15 @@
 package com.school.models;
 
-public class Course {
-    private final int ID;
+public class Course<id> {
+    private int id;
 
     public static int counterCourse;
     private String student;
     private String teacher;
     private String lecture;
 
-    public Course(int ID, String student, String teacher, String lecture) {
-        this.ID = counterCourse;
+    public Course(int id, String student, String teacher, String lecture) {
+        this.id = id;
         this.student = student;
         this.teacher = teacher;
         this.lecture = lecture;
@@ -22,7 +22,7 @@ public class Course {
     }
 
     public int getId() {
-        return ID;
+        return id;
 
     }
 
