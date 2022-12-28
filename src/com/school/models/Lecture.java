@@ -17,6 +17,7 @@ public class Lecture {
     @Override
     public String toString() {
         return "Lecture {" + "id=" + ID + "}";
+    }
 
     public Lecture( int ID, int idCourse, String name){
             this.ID = counterLecture;

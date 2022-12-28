@@ -14,19 +14,21 @@ public class Student {
     @Override
     public String toString() {
         return "Student {" + "id=" + ID + "}";
-
-    public Student( int ID, String name){
-            this.ID = counterStudent;
-            this.name = name;
-            counterStudent++;
-
-        }
-
-        public int getId () {
-            return ID;
-        }
-
-        public String getName () {
-            return name;
-        }
     }
+
+
+    public Student(int ID, String name) {
+        this.ID = counterStudent;
+        this.name = name;
+        counterStudent++;
+
+    }
+
+    public int getId() {
+        return ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+}

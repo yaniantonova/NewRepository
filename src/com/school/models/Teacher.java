@@ -12,21 +12,23 @@ public class Teacher {
     @Override
     public String toString() {
         return "Teacher {" + "id=" + ID + "}";
-
-        Teacher firstTeacher = new Teacher(1, "Karol");
-    public Teacher( int ID, String name){
-            this.ID = counterTeacher;
-            this.name = name;
-            counterTeacher++;
-
-        }
-
-
-        public int getId () {
-            return ID;
-        }
-
-        public String getName () {
-            return name;
-        }
     }
+
+    Teacher firstTeacher = new Teacher(1, "Karol");
+
+    public Teacher(int ID, String name) {
+        this.ID = counterTeacher;
+        this.name = name;
+        counterTeacher++;
+
+    }
+
+
+    public int getId() {
+        return ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
