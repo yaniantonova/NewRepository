@@ -7,27 +7,29 @@ public class Lecture {
     private String name;
     private String homework;
     private String addition;
-    public static int counterLecture;
+    public static int counterLecture = 0;
     public int idCourse;
 
-    public Lecture(int ID) {
-        this.ID = ID;
+    public Lecture() {
+        this.ID = counterLecture+1;
+        counterLecture++;
     }
 
+    //метод для переведеня хеш-коду об'єкта в стрінг'
     @Override
     public String toString() {
         return "Lecture {" + "id=" + ID + "}";
     }
 
     public Lecture( int ID, int idCourse, String name){
-            this.ID = counterLecture;
+            this.ID = counterLecture+1;
             this.idCourse = idCourse;
             this.name = name;
             counterLecture++;
         }
 
 
-        public int getId () {
+        public int getID () {
             return ID;
         }
 

@@ -2,8 +2,9 @@ package com.school.service;
 
 import com.school.models.Course;
 
+// функція створення нового курсу
 public class CourseService {
-    public static Course createCourse(int ID, String student, String teacher, String lecture) {
-        return new Course(ID, student, teacher, lecture);
+    public static Course createCourse() {
+        return new Course();
     }
 }

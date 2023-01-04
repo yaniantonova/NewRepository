@@ -8,17 +8,19 @@ public class Course {
     private String teacher;
     private String lecture;
 
-    public Course(int ID) {
-        this.ID = ID;
+    public Course() {
+        this.ID = counterCourse+1;
+        counterCourse++;
     }
 
+//метод для переведеня хеш-коду об'єкта в стрінг'
     @Override
     public String toString() {
         return "Course {" + "id=" + ID + "}";
     }
 
     public Course( int ID, String student, String teacher, String lecture){
-            this.ID = counterCourse;
+            this.ID = counterCourse+1;
             this.student = student;
             this.teacher = teacher;
             this.lecture = lecture;
@@ -30,7 +32,7 @@ public class Course {
             return student;
         }
 
-        public int getId () {
+        public int getID () {
             return ID;
 
         }

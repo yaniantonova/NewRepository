@@ -6,9 +6,11 @@ public class Teacher {
     public static int counterTeacher;
 
     public Teacher(int ID) {
-        this.ID = ID;
+        this.ID = counterTeacher+1;
+        counterTeacher++;
     }
 
+    //метод для переведеня хеш-коду об'єкта в стрінг'
     @Override
     public String toString() {
         return "Teacher {" + "id=" + ID + "}";
@@ -17,14 +19,15 @@ public class Teacher {
     Teacher firstTeacher = new Teacher(1, "Karol");
 
     public Teacher(int ID, String name) {
-        this.ID = counterTeacher;
+        this.ID = counterTeacher+1;
         this.name = name;
         counterTeacher++;
 
     }
 
 
-    public int getId() {
+    public int getID() {
+
         return ID;
     }
 
