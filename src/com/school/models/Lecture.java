@@ -2,42 +2,34 @@ package com.school.models;
 
 import com.school.models.Course;
 
-public class Lecture {
+public class Lecture extends Data {
     private final int ID;
-    private String name;
+    private static int counter;
     private String homework;
     private String addition;
-    public static int counterLecture = 0;
-    public int idCourse;
+
 
     public Lecture() {
-        this.ID = counterLecture+1;
-        counterLecture++;
+        super();
+        this.ID = counter+1;
+        counter++;
     }
 
-    //метод для переведеня хеш-коду об'єкта в стрінг'
+    public int getID() {
+        return ID;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
     @Override
     public String toString() {
-        return "Lecture {" + "id=" + ID + "}";
+        return "Lecture{" +
+                "ID=" + ID +
+                '}';
     }
-
-    public Lecture( int ID, int idCourse, String name){
-            this.ID = counterLecture+1;
-            this.idCourse = idCourse;
-            this.name = name;
-            counterLecture++;
-        }
-
-
-        public int getID () {
-            return ID;
-        }
-
-        public String getName () {
-            return name;
-        }
-
-    }
+}
 
 
 

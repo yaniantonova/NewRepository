@@ -1,50 +1,50 @@
 package com.school.models;
 
-public class Course {
+public class Course extends Data {
     private final int ID;
-
-    public static int counterCourse;
+    private static int counter;
     private String student;
     private String teacher;
     private String lecture;
 
     public Course() {
-        this.ID = counterCourse+1;
-        counterCourse++;
+        super();
+        this.ID = counter + 1;
+        counter++;
+        this.student = student;
+        this.teacher = teacher;
+        this.lecture = lecture;
+
     }
 
-//метод для переведеня хеш-коду об'єкта в стрінг'
+    public int getID() {
+        return ID;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public String getStudent() {
+        return student;
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public String getLecture() {
+        return lecture;
+    }
+
+    //метод для переведеня хеш-коду об'єкта в стрінг'
     @Override
     public String toString() {
-        return "Course {" + "id=" + ID + "}";
+        return "Course{" +
+                "ID=" + ID +
+                '}';
     }
-
-    public Course( int ID, String student, String teacher, String lecture){
-            this.ID = counterCourse+1;
-            this.student = student;
-            this.teacher = teacher;
-            this.lecture = lecture;
-            counterCourse++;
-        }
-
-
-        public String getStudent () {
-            return student;
-        }
-
-        public int getID () {
-            return ID;
-
-        }
-
-        public String getTeacher () {
-            return teacher;
-        }
-
-        public String getLecture () {
-            return lecture;
-        }
-    }
+}
 
 
 

@@ -13,10 +13,12 @@ public class LectureService {
 
     //виводимо айді лекцій з массиву
     public static void printIdFromArray() {
-        for (int i = 0; i < Lecture.counterLecture; i++) {
+        for (int i = 0; i < LectureRepository.getLectures().length; i++) {
+            if (LectureRepository.getLectures()[i] == null) {
+                System.out.println("There are not all elements of array full");
+            }
+            System.out.println("This element id is " + LectureRepository.getLectures()[i].getID() + " ");
 
-            System.out.println("This element id is " + LectureRepository.lectures[i].getID() + " ");
         }
-
     }
 }

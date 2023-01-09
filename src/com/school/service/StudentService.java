@@ -4,7 +4,7 @@ import com.school.models.Student;
 
 //функція створення нового студента
 public class StudentService {
-    public static Student createStudent(int ID) {
-        return new Student(ID);
+    public static Student createStudent() {
+        return new Student();
     }
 }

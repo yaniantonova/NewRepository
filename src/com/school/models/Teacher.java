@@ -1,37 +1,15 @@
 package com.school.models;
 
-public class Teacher {
+public class Teacher extends Data {
     private final int ID;
-    private String name;
-    public static int counterTeacher;
+    private static int counter;
 
-    public Teacher(int ID) {
-        this.ID = counterTeacher+1;
-        counterTeacher++;
-    }
+    public Teacher() {
 
-    //метод для переведеня хеш-коду об'єкта в стрінг'
-    @Override
-    public String toString() {
-        return "Teacher {" + "id=" + ID + "}";
-    }
-
-    Teacher firstTeacher = new Teacher(1, "Karol");
-
-    public Teacher(int ID, String name) {
-        this.ID = counterTeacher+1;
-        this.name = name;
-        counterTeacher++;
-
+        super();
+        this.ID = counter + 1;
+        counter++;
     }
 
 
-    public int getID() {
-
-        return ID;
-    }
-
-    public String getName() {
-        return name;
-    }
 }

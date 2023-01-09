@@ -12,25 +12,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Program is starting, we creating course and lectures");
 
         Course firstCourse = new Course();
         System.out.println("How many lectures create: ");
-        int howManyLec = scanner.nextInt();
-        int x = 0;
-        System.out.println("Program created 1 new course and " + howManyLec + " new lectures");
-        System.out.println("IDs: ");
-        while (x < howManyLec) {
-            if (x >= LectureRepository.lectures.length) {
-                LectureRepository.makeArrayBigger();
-            }
-            LectureRepository.lectures[x] = new Lecture();
-            x++;
-        }
-        System.out.println("Array capacity now is " + LectureRepository.lectures.length);
+        LectureRepository.addLectureInArray();
+
+        System.out.println("Array capacity now is " + LectureRepository.getLectures().length);
+        System.out.println("Number lectures are " + Lecture.getCounter() + " number courses are " + Course.getCounter());
         System.out.println("ID Lecture in Array:");
         LectureService.printIdFromArray();
+        System.out.println(firstCourse.getID());
 
 
     }
