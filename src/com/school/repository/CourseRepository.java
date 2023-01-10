@@ -9,4 +9,6 @@ public class CourseRepository {
     public CourseRepository(Course[] lectures) {
         this.courses = new Course[STANDART_INIT_CAPACITY];
     }
+
+
 }

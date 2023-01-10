@@ -14,18 +14,18 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Program is starting, we creating course and lectures");
 
-        Course firstCourse = new Course();
         System.out.println("How many lectures create: ");
         LectureRepository.addLectureInArray();
-
+        CourseService.createCourse();
         System.out.println("Array capacity now is " + LectureRepository.getLectures().length);
         System.out.println("Number lectures are " + Lecture.getCounter() + " number courses are " + Course.getCounter());
         System.out.println("ID Lecture in Array:");
         LectureService.printIdFromArray();
-        System.out.println(firstCourse.getID());
-
-
+        LectureRepository.getALL(LectureRepository.getLectures());
+        LectureRepository.getById(LectureRepository.getLectures(), 3);
+        LectureRepository.addObjectsInArray(LectureRepository.getLectures(),new Lecture());
     }
+
 
 }
 

@@ -1,15 +1,14 @@
 package com.school.repository;
 
 import com.school.models.Lecture;
-import com.school.service.CourseService;
-import com.school.service.LectureService;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class LectureRepository {
+public class LectureRepository extends AllRepository {
     private static int initCapacity = 5;
 
-    //оголошуємо масив і задаємо його місткість
+    // declare array an define its capacity
     private static Lecture[] lectures = new Lecture[initCapacity];
 
     public static Lecture[] getLectures() {
@@ -18,7 +17,7 @@ public class LectureRepository {
 
     }
 
-    //  збільшення масиву за формулою
+    //  increase array with formula
     public static void makeArrayBigger() {
         int newCapacity = initCapacity * 3 / 2 + 1;
         Lecture[] newLectures = new Lecture[newCapacity];
@@ -27,25 +26,36 @@ public class LectureRepository {
         initCapacity = newCapacity;
     }
 
+    // add new lecture in array
     public static void addLectureInArray() {
         Scanner scanner = new Scanner(System.in);
         int howManyLec = scanner.nextInt();
-        int x = 0;
+        int index = 0;
         System.out.println("Program created 1 new course and " + howManyLec + " new lectures");
         System.out.println("IDs: ");
-        while (x <= howManyLec) {
-            if (x > LectureRepository.getLectures().length | x == LectureRepository.getLectures().length) {
-                LectureRepository.makeArrayBigger();
+        while (index <= howManyLec) {
+            if (index >= initCapacity) {
+                makeArrayBigger();
             }
-            LectureRepository.getLectures()[x] = new Lecture();
-            x++;
+            lectures[index] = new Lecture();
+            index++;
             scanner.close();
         }
 
-
     }
 
+//    public static void getById(Object [] objects, int numId) {
+//        for (int i = 0; i < lectures.length; i++) {
+//            if (i == numId) {
+//                System.out.println("Method getById work: This element of array is " + lectures[i].toString());
+//            }
+//        }
+//    }
 }
+
+
+
+
 
 
 
