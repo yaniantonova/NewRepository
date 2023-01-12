@@ -4,10 +4,6 @@ public class Data {
     private String name;
 
     public Data() {
-        setName();
-    }
-
-    public void setName() {
         this.name = name;
     }
 
@@ -15,5 +11,7 @@ public class Data {
         return name;
     }
 
-
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -18,7 +18,7 @@ public class LectureRepository extends AllRepository {
     }
 
     //  increase array with formula
-    public static void makeArrayBigger() {
+    public void makeArrayBigger() {
         int newCapacity = initCapacity * 3 / 2 + 1;
         Lecture[] newLectures = new Lecture[newCapacity];
         System.arraycopy(lectures, 0, newLectures, 0, initCapacity);
@@ -27,20 +27,20 @@ public class LectureRepository extends AllRepository {
     }
 
     // add new lecture in array
-    public static void addLectureInArray() {
+    public void addLectureInArray() {
         Scanner scanner = new Scanner(System.in);
-        int howManyLec = scanner.nextInt();
+        int howManyObjects = scanner.nextInt();
         int index = 0;
-        System.out.println("Program created 1 new course and " + howManyLec + " new lectures");
-        System.out.println("IDs: ");
-        while (index <= howManyLec) {
+        System.out.println("Program created 1 new course and " + howManyObjects + " new lectures");
+        while (index < howManyObjects) {
             if (index >= initCapacity) {
                 makeArrayBigger();
             }
             lectures[index] = new Lecture();
             index++;
-            scanner.close();
         }
+
+    }
 
     }
 
@@ -51,7 +51,7 @@ public class LectureRepository extends AllRepository {
 //            }
 //        }
 //    }
-}
+
 
 
 

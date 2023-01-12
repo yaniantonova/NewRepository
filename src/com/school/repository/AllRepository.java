@@ -6,17 +6,21 @@ import java.util.Arrays;
 
 public class AllRepository {
 
-    public static void getALL(Object[] arrays) {
+    public void getALL(Object[] arrays) {
         for (int i = 0; i < arrays.length; i++) {
-            if (arrays[i] == null) {
-                System.out.println("There are not all elements of array full");
+//            if (arrays[i] == null) {
+//                System.out.println("There are not all elements of array full");
+//            }
+            try {
+                System.out.println("Method getAll works: This element id is " + arrays[i].toString() + " ");
+            } catch (RuntimeException elementIsabsent) {
+                System.out.println("This element in array doesn`t full yet");
             }
-            System.out.println("Method getAll works: This element id is " + arrays[i].toString() + " ");
         }
     }
 
 
-    public static void addObjectsInArray(Object[] arrays, Object object) {
+    public void addObjectsInArray(Object[] arrays, Object object) {
         int index = 5;
         Object[] objects = new Object[index];
         if (arrays.length <= index) {
@@ -27,18 +31,25 @@ public class AllRepository {
             index = newIndex;
             ;
         }
-        System.out.println("Method addObjectsInArray works: " + arrays[index].toString());
+        System.out.println("Method addObjectsInArray works: we added new lectures in array, its " + arrays[index].toString() + " , her index = " + index);
     }
 
-    public static void getById(Object[] arrays, int numId) {
+    public void getById(Object[] arrays, int index) {
         for (int i = 0; i < arrays.length; i++) {
-            if (i == numId) {
+            if (i == index) {
                 System.out.println("Method getById works: This element of array is " + arrays[i].toString());
             }
         }
     }
 
-    public static void deleteById() {
+    public void deleteById(Object[] arrays, int index) {
+        Object[] newArrays = new Object[arrays.length - 1];
+        int remainingElements = arrays.length - (index + 1);
+        System.arraycopy(arrays, 0, newArrays, 0, index);
+        System.arraycopy(arrays, index + 1, newArrays, index, remainingElements);
+        System.out.println("Method deleteById works: We deleted element " + index + " from array.");
+        System.out.println("Now our array include: " + Arrays.toString(newArrays));
+
 
     }
 
