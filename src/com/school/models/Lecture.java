@@ -2,30 +2,33 @@ package com.school.models;
 
 import com.school.models.Course;
 
-public class Lecture {
+public class Lecture extends Data {
     private final int ID;
-    private String name;
+    private static int counter;
     private String homework;
     private String addition;
-    public static int counterLecture;
-    public int idCourse;
 
-    public Lecture(int ID, int idCourse, String name) {
-        this.ID = counterLecture;
-        this.idCourse = idCourse;
-        this.name = name;
-        counterLecture++;
+
+    public Lecture() {
+        super();
+        this.ID = counter + 1;
+        counter++;
     }
 
-
-    public int getId() {
+    public int getID() {
         return ID;
     }
 
-    public String getName() {
-        return name;
+    public static int getCounter() {
+        return counter;
     }
 
+    @Override
+    public String toString() {
+        return "Lecture{" +
+                "ID=" + ID +
+                '}';
+    }
 }
 
 

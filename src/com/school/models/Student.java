@@ -1,23 +1,20 @@
 package com.school.models;
 
-public class Student {
+public class Student extends Data {
     private final int ID;
-    private String name;
-    public static int counterStudent;
+    private static int counter;
 
-    Student firstStudent = new Student(1,"Melnyk");
-    public Student(int ID, String name) {
-        this.ID = counterStudent;
-        this.name = name;
-        counterStudent++;
-
+    public Student() {
+        super();
+        this.ID = counter + 1;
+        counter++;
     }
 
-    public int getId() {
+    public int getID() {
         return ID;
     }
 
-    public String getName() {
-        return name;
+    public static int getCounter() {
+        return counter;
     }
 }

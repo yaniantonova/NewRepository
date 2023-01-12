@@ -4,6 +4,7 @@ import com.school.models.Course;
 import com.school.models.Lecture;
 import com.school.models.Student;
 import com.school.models.Teacher;
+import com.school.repository.LectureRepository;
 import com.school.service.CourseService;
 import com.school.service.LectureService;
 
@@ -11,104 +12,51 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Course firstCourse = new Course(1, "Group_1", "Kovalenko", "Java");
-        Lecture firstLecture = new Lecture(1, firstCourse.getId(), "theme 1");
-        Lecture secondLecture = new Lecture(2, firstCourse.getId(), "theme 2");
-        Lecture thirdLecture = new Lecture(3, firstCourse.getId(), "theme 3");
-        Lecture fourthLecture = new Lecture(4, firstCourse.getId(), "theme 4");
-        Lecture fifthLecture = new Lecture(5, firstCourse.getId(), "theme 5");
-        Lecture sixthLecture = new Lecture(6, firstCourse.getId(), "theme 6");
+        LectureRepository testObject = new LectureRepository();
+        System.out.println("Program is starting, we creating course and lectures");
 
-        System.out.println(sixthLecture.idCourse);
-        System.out.println(Lecture.counterLecture);
+        System.out.println("How many lectures create: ");
+        testObject.addLectureInArray();
+        CourseService.createCourse();
+        System.out.println("Array capacity now is " + LectureRepository.getLectures().length);
+        System.out.println("Number lectures are " + Lecture.getCounter() + " number courses are " + Course.getCounter());
+
+        Scanner chooseTheNumber = new Scanner(System.in);
+        System.out.println("Select number of action");
+        System.out.println("1 - Show all objects in array");
+        System.out.println("2 - Show element by ID");
+        System.out.println("3 - Add object in array");
+        System.out.println("4 - Delete element by ID");
+        System.out.println("5 - Cancel");
 
 
-        Course secondCourse = new Course(2, "Group_2", "Melnyk", "Pyton");
-        Course thirdCourse = new Course(3, "Group_3", "Levi", "Kotlin");
+        int action = chooseTheNumber.nextInt();
+        switch (action) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Select number of your teacher");
-        System.out.println("1 - Kovalenko");
-        System.out.println("2 - Melnyk");
-        System.out.println("3 - Levi");
-
-        int teacher = scanner.nextInt();
-        switch (teacher) {
             case 1:
-                System.out.println("Kovalenko");
-                break;
+                testObject.getALL(LectureRepository.getLectures());
+                chooseTheNumber.nextInt();
             case 2:
-                System.out.println("Melnyk");
-                break;
+                testObject.getById(LectureRepository.getLectures(), 3);
+                chooseTheNumber.nextInt();
             case 3:
-                System.out.println("Levi");
+                testObject.addObjectsInArray(LectureRepository.getLectures(), new Lecture());
+                chooseTheNumber.nextInt();
+            case 4:
+                testObject.deleteById(LectureRepository.getLectures(), 2);
+                chooseTheNumber.nextInt();
+            case 5:
+                System.out.println("The programm is off");
                 break;
+
             default:
-                System.out.println("This teacher is absent. Please, select teacher from the list");
-                break;
+                System.out.println("Please choose variant action from 1 to 5");
+                chooseTheNumber.nextInt();
 
-        }
-        System.out.println("You choose " + teacher);
-        System.out.println("Do you want to create a new lecture?");
-        System.out.println("Yes");
-        System.out.println("No");
-        String answer = scanner.next();
-        switch (answer) {
-            case "Yes":
-                System.out.println("Yes");
-                Lecture seventhLecture = new Lecture(7, 1, "theme 7");
-                System.out.println(firstCourse.getId());
-                System.out.println(Lecture.counterLecture);
-                break;
-            case "No":
-                System.out.println("No");
-                break;
-            default:
-                System.out.println("Please, answer");
-                break;
-
-        }
-        System.out.println("Would you want to continue?");
-        System.out.println("Yes");
-        System.out.println("No");
-        String answer2 = scanner.next();
-        switch (answer2) {
-            case "Yes":
-                System.out.println("Yes");
-                Lecture seventhLecture = new Lecture(7, 1, "theme 7");
-                System.out.println(Lecture.counterLecture);
-                break;
-            case "No":
-                System.out.println("No");
-                break;
-            default:
-                System.out.println("Please, answer");
-                break;
-        }
-        Scanner alwaysWork = new Scanner(System.in); // add console app which always work, task1
-        int answer3 = 1;
-        while (answer3 > 0) {
-            System.out.println("Choose number of lecture");
-            int answer4 = alwaysWork.nextInt();
-            if (answer4 <= Lecture.counterLecture) { // add check,task3
-                System.out.println("Your lecture is " + answer4);
-            } else {
-                System.out.println("That`s all for now. Program will be closed"); // close app,task2
-                break;
-            }
 
         }
 
-
-        int i = Lecture.counterLecture; // add new 8 lectures,after close app, task4
-        while (i < 16) {
-            LectureService.createLecture(9, 1, "theme n");
-            i++;
-            System.out.println(Lecture.counterLecture);
-
-        }
 
     }
 
 }
-
