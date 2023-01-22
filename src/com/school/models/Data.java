@@ -3,7 +3,7 @@ package com.school.models;
 public class Data {
     private String name;
 
-    public Data() {
+    public Data(String name) {
         this.name = name;
     }
 

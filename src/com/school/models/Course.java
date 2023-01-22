@@ -7,8 +7,8 @@ public class Course extends Data {
     private String teacher;
     private String lecture;
 
-    public Course() {
-        super();
+    public Course(String name) {
+        super(name);
         this.ID = counter + 1;
         counter++;
         this.student = student;

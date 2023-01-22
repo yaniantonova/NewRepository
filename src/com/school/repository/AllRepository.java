@@ -5,6 +5,16 @@ import com.school.models.Lecture;
 import java.util.Arrays;
 
 public class AllRepository {
+    private static int initCapacity = 5;
+    private static AllRepository[] allRepositories = new AllRepository[initCapacity];
+
+    public static AllRepository[] getAllRepositories() {
+        return allRepositories;
+    }
+
+    public static int getInitCapacity() {
+        return initCapacity;
+    }
 
     public void getALL(Object[] arrays) {
         for (int i = 0; i < arrays.length; i++) {
@@ -19,19 +29,23 @@ public class AllRepository {
         }
     }
 
+    public void makeArrayBigger() {
+        int newCapacity = initCapacity * 3 / 2 + 1;
+        AllRepository[] newAllRepositories = new AllRepository[newCapacity];
+        System.arraycopy(allRepositories, 0, newAllRepositories, 0, initCapacity);
+        allRepositories = newAllRepositories;
+        initCapacity = newCapacity;
+    }
 
     public void addObjectsInArray(Object[] arrays, Object object) {
-        int index = 5;
-        Object[] objects = new Object[index];
-        if (arrays.length <= index) {
-            int newIndex = index * 3 / 2 + 1;
-            Object[] newArrays = new Object[newIndex];
-            System.arraycopy(arrays, 0, newArrays, 0, index);
-            arrays = newArrays;
-            index = newIndex;
-            ;
+        int index = 0;
+        if (index > initCapacity) {
+            makeArrayBigger();
         }
-        System.out.println("Method addObjectsInArray works: we added new lectures in array, its " + arrays[index].toString() + " , her index = " + index);
+        allRepositories[index] = new AllRepository();
+        index++;
+
+        System.out.println("Method addObjectsInArray works: we added new object in array, its " + object.toString() + " , her index = " + index);
     }
 
     public void getById(Object[] arrays, int index) {

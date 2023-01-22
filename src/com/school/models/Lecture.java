@@ -7,12 +7,15 @@ public class Lecture extends Data {
     private static int counter;
     private String homework;
     private String addition;
+    private int personID = 0;
 
 
-    public Lecture() {
-        super();
-        this.ID = counter + 1;
+
+    public Lecture(String name, int personID) {
+        super(name);
+        this.ID = counter;
         counter++;
+        personID++;
     }
 
     public int getID() {
@@ -22,6 +25,11 @@ public class Lecture extends Data {
     public static int getCounter() {
         return counter;
     }
+
+    public int getPersonID() {
+        return personID;
+    }
+
 
     @Override
     public String toString() {

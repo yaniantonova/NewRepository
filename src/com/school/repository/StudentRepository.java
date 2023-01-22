@@ -1,4 +1,6 @@
 package com.school.repository;
 
-public class StudentRepository {
+public class StudentRepository extends PersonRepository {
+
+
 }

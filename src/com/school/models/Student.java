@@ -1,12 +1,12 @@
 package com.school.models;
 
-public class Student extends Data {
+public class Student extends Person {
     private final int ID;
     private static int counter;
 
-    public Student() {
-        super();
-        this.ID = counter + 1;
+    public Student(String name, Role role) {
+        super(name);
+        ID = counter + 1;
         counter++;
     }
 
