@@ -3,28 +3,18 @@ package com.school.models;
 import com.school.models.Course;
 
 public class Lecture extends Data {
-    private final int ID;
-    private static int counter;
+
     private String homework;
     private String addition;
     private int personID = 0;
-
+    private String description;
 
 
     public Lecture(String name, int personID) {
         super(name);
-        this.ID = counter;
-        counter++;
         personID++;
     }
 
-    public int getID() {
-        return ID;
-    }
-
-    public static int getCounter() {
-        return counter;
-    }
 
     public int getPersonID() {
         return personID;
@@ -34,7 +24,7 @@ public class Lecture extends Data {
     @Override
     public String toString() {
         return "Lecture{" +
-                "ID=" + ID +
+                "ID=" + super.getID() +
                 '}';
     }
 }

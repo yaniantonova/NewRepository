@@ -1,10 +1,10 @@
 package com.school.repository;
 
-import com.school.models.Lecture;
 import com.school.models.Person;
-import com.school.models.Role;
 
-public class PersonRepository extends AllRepository {
+import java.util.Arrays;
+
+public class PersonRepository extends DataRepository {
     private static int initCapacity = 5;
 
     // declare array an define its capacity
@@ -15,14 +15,8 @@ public class PersonRepository extends AllRepository {
     }
 
     @Override
-    public void addObjectsInArray(Object[] arrays, Object object) {
-        super.addObjectsInArray(arrays, object);
-        int index = 0;
-        if (index >= initCapacity) {
-            makeArrayBigger();
-        }
-        people[index] = new Person(1,"name", Role.STUDENT);
-        index++;
+    public String getALL(Person[] people) {
+        return Arrays.toString(people);
     }
-    }
+}
 

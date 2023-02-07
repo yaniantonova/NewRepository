@@ -1,7 +1,7 @@
 package com.school.repository;
 import com.school.models.Teacher;
 
-public class TeacherRepository extends AllRepository {
+public class TeacherRepository extends DataRepository {
     private static int initCapacity = 5;
 
     // declare array an define its capacity
